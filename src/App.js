@@ -29,10 +29,57 @@ function App() {
   const [KI, setKI] = useState(DEFAULT_KEY_ITEM_STATE);
   
   // handler for adjusting KI state (must also adjust availability of checks)
+  const toggleKI = (key) => {
+    if (KI[key] === undefined) return;
+    const newKIState = KI;
+    newKIState[key] = !newKIState[key];
+    setKI(newKIState);
+  }
 
   // establish default location checks state (should include available and checked)
+  const DEFAULT_LOCATIONS_STATE = {
+    mistCave: false,
+    damcyan: false,
+    waterfall: false,
+    antlion: false,
+    fabulDefense: false,
+    hobs: false,
+    ordeals: false,
+    baronInn: false,
+    mistVillage: false,
+    kaipoInn: false,
+    kaipoBed: false,
+    baronCastle: false,
+    baronOdin: false,
+    magnes: false,
+    zot: false,
+    adamant: false,
+    dwarf: false,
+    babilTop: false,
+    babilCannon: false,
+    sealed: false,
+    feymarchQueen: false,
+    feymarchKing: false,
+    sylph: false,
+    bahamut: false,
+    murasame: false,
+    crystalSword: false,
+    whiteSpear: false,
+    ribbon: false,
+    masamune: false,
+    giant: false,
+  };
+
+  const [locations, setLocations] = useState(DEFAULT_LOCATIONS_STATE);
+  const [available, setAvailable] = useState([]) // needs available function
   
   // handler for toggling location is checks
+  const toggleLocation = (key) => {
+    if (locations[key] === undefined) return;
+    const newLocState = KI;
+    newLocState[key] = !newLocState[key];
+    setKI(newLocState);
+  }
 
   // render KI and location components
   return (
