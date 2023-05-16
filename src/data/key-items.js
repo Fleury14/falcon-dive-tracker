@@ -1,31 +1,31 @@
 const keyItems = [
     {
         title: "Bomb Ring",
-        slug: "bomb-ring"
+        slug: "bombRing"
     },
     {
         title: "Kaipo Inn Pass",
-        slug: "kaipo-pass"
+        slug: "kaipoPass"
     },
     {
         title: "Sand Ruby",
-        slug: "sand-ruby"
+        slug: "sandRuby"
     },
     {
         title: "Baron Key",
-        slug: "baron-key"
+        slug: "baronKey"
     },
     {
         title: "Twin Harp",
-        slug: "twin-harp"
+        slug: "twinHarp"
     },
     {
         title: "Earth Crystal",
-        slug: "earth-crystal"
+        slug: "earthCrystal"
     },
     {
         title: "Magma Rock",
-        slug: "magma-rock"
+        slug: "magmaRock"
     },
     {
         title: "Hovercraft",
@@ -33,23 +33,23 @@ const keyItems = [
     },
     {
         title: "Rat Tail",
-        slug: "rat-tail"
+        slug: "ratTail"
     },
     {
         title: "Dr. Lugae's Key",
-        slug: "lugae-key"
+        slug: "lugaeKey"
     },
     {
         title: "Luca's Necklace",
-        slug: "luca-necklace"
+        slug: "lucaNecklace"
     },
     {
         title: "Frying Pan",
-        slug: "frying-pan"
+        slug: "fryingPan"
     },
     {
         title: "Dark Crystal",
-        slug: "dark-crystal"
+        slug: "darkCrystal"
     },
     {
         title: "Adamantite",
@@ -57,11 +57,11 @@ const keyItems = [
     },
     {
         title: "Sword of Legend",
-        slug: "legend-sword"
+        slug: "legendSword"
     },
     {
         title: "Pink Tail",
-        slug: "pink-tail"
+        slug: "pinkTail"
     },
 ];
 
