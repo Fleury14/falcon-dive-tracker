@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { KITracker, LocationTracker } from './components'
+import { KITracker, LocationTracker } from './components';
+import parseAvailable from './parse-available';
 
 import logo from './logo.svg';
 import './App.css';
@@ -80,6 +81,8 @@ function App() {
     newLocState[key] = !newLocState[key];
     setKI(newLocState);
   }
+
+  // side effect to adjust availability on every KI adjustment
 
   // render KI and location components
   return (
