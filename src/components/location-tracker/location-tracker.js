@@ -1,16 +1,21 @@
 import React from 'react';
+import { KIChecks } from '../../data';
 
 const LocationTracker = ({ available, locations, onToggle }) => {
+    // debug
     console.log('available', available);
     console.log('locations', locations);
-    // call function to parse available locations given:
-    // 1: whats been checked
-    // 2: availability on KI
-    // this function should live in another file
 
-    // Having returned available KI, draw!
+
+    // loop through available checks using available prop, use the location object to determine if its been check
+    // each item should have the respective key passed in the toggle handler
     return (
-        <></>
+        <>
+        {KIChecks.map(check => {
+            if (available[check.slug] === true) return <button key={`location-${check.slug}`} className={locations[check.slug] === true ? 'spot-complete' : 'spot-open'}>{check.name}</button>
+            else return <span className="not-available">{check.name}</span>
+        })}
+        </>
     )
 }
 

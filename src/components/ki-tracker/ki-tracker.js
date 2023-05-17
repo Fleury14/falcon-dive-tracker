@@ -1,5 +1,6 @@
 import React from 'react';
 import { keyItems } from '../../data';
+import './ki-tracker.css';
 
 const KITracker = ({ KI, onToggle }) => {
 
@@ -11,7 +12,7 @@ const KITracker = ({ KI, onToggle }) => {
     return (
         <>
             {keyItems.map(item => {
-                return <button onClick={() => onToggle(item.slug)}>{item.title}</button>
+                return <button className={KI[item.slug] === true ? 'has-item' : 'does-not-have-item'} onClick={() => onToggle(item.slug)}>{item.title}</button>
             })}
         </>
     )
