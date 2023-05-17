@@ -35,6 +35,7 @@ function App() {
     const newKIState = KI;
     newKIState[key] = !newKIState[key];
     setKI(newKIState);
+    setAvailable(parseAvailable({ KI }))
   }
 
   // establish default location checks state (should include available and checked)
@@ -72,23 +73,23 @@ function App() {
   };
 
   const [locations, setLocations] = useState(DEFAULT_LOCATIONS_STATE);
-  const [available, setAvailable] = useState([]) // needs available function
+  const [available, setAvailable] = useState(parseAvailable({ KI: DEFAULT_KEY_ITEM_STATE })) // needs available function
   
   // handler for toggling location is checks
   const toggleLocation = (key) => {
     if (locations[key] === undefined) return;
     const newLocState = KI;
     newLocState[key] = !newLocState[key];
-    setKI(newLocState);
+    setLocations(newLocState);
   }
 
-  // side effect to adjust availability on every KI adjustment
+  // side effect to adjust availability on every KI adjustment (or not?)
 
   // render KI and location components
   return (
     <div className="App">
-      <KITracker />
-      <LocationTracker />
+      <KITracker KI={KI} onToggle={(key) => toggleKI(key)} />
+      <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

@@ -1,5 +1,8 @@
 const parseAvailable = ({ KI, locations }) => {
     
+    //debug
+    // console.log('ki in parser', KI);
+
     // set default
     const available = {
         mistCave: true,

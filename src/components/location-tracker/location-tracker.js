@@ -1,7 +1,8 @@
 import React from 'react';
 
-const LocationTracker = () => {
-
+const LocationTracker = ({ available, locations, onToggle }) => {
+    console.log('available', available);
+    console.log('locations', locations);
     // call function to parse available locations given:
     // 1: whats been checked
     // 2: availability on KI
