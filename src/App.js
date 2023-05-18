@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { KITracker, LocationTracker } from './components';
-// import { ThemeProvider } from 'styled-components';
 import parseAvailable from './parse-available';
 import { themes } from './data'
 
@@ -94,7 +93,7 @@ function App() {
   return (
     <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
       <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
-      <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)}/>
+      <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)} theme={themeObj}/>
       
     </div>
   );
