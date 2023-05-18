@@ -36,10 +36,10 @@ function App() {
   // handler for adjusting KI state (must also adjust availability of checks)
   const toggleKI = (key) => {
     if (KI[key] === undefined) return;
-    const newKIState = KI;
+    const newKIState = structuredClone(KI);
     newKIState[key] = !newKIState[key];
     setKI(newKIState);
-    setAvailable(parseAvailable({ KI }))
+    setAvailable(parseAvailable({ KI: newKIState }))
   }
 
   // establish default location checks state (should include available and checked)
@@ -82,7 +82,7 @@ function App() {
   // handler for toggling location is checks
   const toggleLocation = (key) => {
     if (locations[key] === undefined) return;
-    const newLocState = KI;
+    const newLocState = structuredClone(locations)
     newLocState[key] = !newLocState[key];
     setLocations(newLocState);
   }
@@ -94,7 +94,6 @@ function App() {
     <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
       <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
       <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)} theme={themeObj}/>
-      
     </div>
   );
 }

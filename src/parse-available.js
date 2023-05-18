@@ -47,7 +47,7 @@ const parseAvailable = ({ KI, locations }) => {
     available.kaipoBed = KI.sandRuby;
     available.baronCastle = KI.baronKey;
     available.baronOdin = KI.baronKey;
-    available.magnes = KI.magnes;
+    available.magnes = KI.twinHarp;
     available.zot = KI.earthCrystal;
     available.adamant = KI.hovercraft && KI.ratTail;
     available.babilTop = underGroundAccess;

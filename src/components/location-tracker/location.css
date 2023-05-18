@@ -1,3 +1,13 @@
 .spot-complete {
     background-color: red;
 }
+
+.location-checker-container {
+    display: flex;
+    width: 450px;
+}
+
+.location-checker-container div {
+    width: 150px;
+    text-align: center;
+}
