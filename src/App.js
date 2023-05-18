@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { KITracker, LocationTracker } from './components';
+// import { ThemeProvider } from 'styled-components';
 import parseAvailable from './parse-available';
+import { themes } from './data'
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  //establish theme
+  const [theme, setTheme] = useState('dark');
+  const themeObj = themes[theme]; 
 
   // establish default KI state (all KIs: false)
   const DEFAULT_KEY_ITEM_STATE = {
@@ -87,23 +92,10 @@ function App() {
 
   // render KI and location components
   return (
-    <div className="App">
-      <KITracker KI={KI} onToggle={(key) => toggleKI(key)} />
+    <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
+      <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
       <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)}/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }

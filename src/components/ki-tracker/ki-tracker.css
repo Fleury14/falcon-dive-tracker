@@ -1,3 +1,6 @@
-.has-item {
-    background-color: green;
+.ki-tracker-container {
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
