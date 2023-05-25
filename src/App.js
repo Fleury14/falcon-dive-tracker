@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KITracker, LocationTracker } from './components';
+import { KITracker, LocationTracker, ShardTracker } from './components';
 import parseAvailable from './parse-available';
 import { themes } from './data'
 
@@ -92,6 +92,7 @@ function App() {
   // render KI and location components
   return (
     <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
+      <ShardTracker theme={themeObj} />
       <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
       <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)} theme={themeObj}/>
     </div>
