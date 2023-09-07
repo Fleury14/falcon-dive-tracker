@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KITracker, LocationTracker, ShardTracker } from './components';
+import { KITracker, LocationTracker, NothingsTracker, ShardTracker } from './components';
 import parseAvailable from './parse-available';
 import { themes } from './data'
 
@@ -89,10 +89,15 @@ function App() {
 
   // side effect to adjust availability on every KI adjustment (or not?)
 
+  // state for nothing count, shouldn't need a more complex toggle
+
+  const [nothings, setNothings] = useState(0);
+
   // render KI and location components
   return (
     <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
       <ShardTracker theme={themeObj} />
+      <NothingsTracker theme={themeObj} nothings={nothings} setNothings={setNothings} />
       <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
       <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)} theme={themeObj}/>
     </div>
