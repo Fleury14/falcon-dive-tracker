@@ -1,4 +1,4 @@
-const parseAvailable = ({ KI, locations }) => {
+const parseAvailable = ({ KI, locations, nothings }) => {
     
     //debug
     // console.log('ki in parser', KI);
@@ -20,6 +20,7 @@ const parseAvailable = ({ KI, locations }) => {
         baronOdin: false,
         magnes: false,
         zot: false,
+        agart: false,
         adamant: false,
         dwarf: false,
         babilTop: false,
@@ -49,6 +50,7 @@ const parseAvailable = ({ KI, locations }) => {
     available.baronOdin = KI.baronKey;
     available.magnes = KI.twinHarp;
     available.zot = KI.earthCrystal;
+    available.agart = nothings >= 3;
     available.adamant = KI.hovercraft && KI.ratTail;
     available.babilTop = underGroundAccess;
     available.babilCannon = underGroundAccess && KI.lugaeKey;
