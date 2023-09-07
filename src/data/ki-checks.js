@@ -94,6 +94,12 @@ const KIChecks = [
         zone: 1
     },
     {
+        name: "Agart Telescope",
+        slug: "agart",
+        requirement: [],
+        zone: 1,
+    },
+    {
         name: "Adamant Grotto",
         slug: "adamant",
         requirement: ['hovercraft', 'rat-tail'],

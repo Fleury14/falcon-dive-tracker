@@ -39,7 +39,7 @@ function App() {
     const newKIState = structuredClone(KI);
     newKIState[key] = !newKIState[key];
     setKI(newKIState);
-    setAvailable(parseAvailable({ KI: newKIState }))
+    setAvailable(parseAvailable({ KI: newKIState, nothings }))
   }
 
   // establish default location checks state (should include available and checked)
@@ -59,6 +59,7 @@ function App() {
     baronOdin: false,
     magnes: false,
     zot: false,
+    agart: false,
     adamant: false,
     dwarf: false,
     babilTop: false,
@@ -93,11 +94,17 @@ function App() {
 
   const [nothings, setNothings] = useState(0);
 
+  // i lied, a new available check needs to happen in case of agart KI opening up
+  const toggleNothings = (newAmt) => {
+    setNothings(newAmt);
+    setAvailable(parseAvailable({ KI, nothings: newAmt }));
+  }
+
   // render KI and location components
   return (
     <div style={{ backgroundColor: themeObj.bg, color: theme.fg, minHeight: '100vh' }}>
       <ShardTracker theme={themeObj} />
-      <NothingsTracker theme={themeObj} nothings={nothings} setNothings={setNothings} />
+      <NothingsTracker theme={themeObj} nothings={nothings} setNothings={toggleNothings} />
       <KITracker KI={KI} onToggle={(key) => toggleKI(key)} theme={themeObj} />
       <LocationTracker available={available} locations={locations} onToggle={(key) => toggleLocation(key)} theme={themeObj}/>
     </div>
